@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   ScrollView,
   Dimensions,
+  Image,
 } from 'react-native';
 import React from 'react';
 import InputBox from '../components/InputBox';
@@ -21,6 +22,10 @@ export default function ForgotPassword({navigation}) {
           justifyContent: 'center',
           position: 'relative',
         }}>
+        <Image
+          source={require('../assets/logo.png')}
+          style={{position: 'absolute', top: 50, width: 100, height: 100}}
+        />
         <View style={{width: '100%', padding: 20}}>
           <Text
             style={{
@@ -29,18 +34,24 @@ export default function ForgotPassword({navigation}) {
               color: '#283244',
               marginBottom: 15,
             }}>
-            ENTER PASSWORD
+            FORGOT PASSWORD
           </Text>
           <InputBox
-            placeholder="Password"
+            placeholder="Previous Password"
             error={false}
-            errorMessage="Enter password"
+            errorMessage="Enter previous password"
             secureTextEntry={true}
           />
           <InputBox
-            placeholder="Confirm Password"
+            placeholder="New Password"
             error={false}
-            errorMessage="Enter confirm password"
+            errorMessage="Enter new Password"
+            secureTextEntry={true}
+          />
+          <InputBox
+            placeholder="Re-Enter New Password"
+            error={false}
+            errorMessage="Enter re-enter new password"
             secureTextEntry={true}
           />
           <TouchableOpacity
@@ -56,7 +67,7 @@ export default function ForgotPassword({navigation}) {
               alignItems: 'center',
               marginTop: 50,
             }}>
-            <Text style={{color: '#ffffff'}}>Next</Text>
+            <Text style={{color: '#ffffff'}}>Change Password</Text>
           </TouchableOpacity>
         </View>
       </ImageBackground>

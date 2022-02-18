@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   ScrollView,
   Dimensions,
+  Image,
 } from 'react-native';
 import React from 'react';
 import InputBox from '../components/InputBox';
@@ -21,6 +22,10 @@ export default function Login({navigation}) {
           justifyContent: 'center',
           position: 'relative',
         }}>
+        <Image
+          source={require('../assets/logo.png')}
+          style={{position: 'absolute', top: 50, width: 100, height: 100}}
+        />
         <View style={{width: '100%', padding: 20}}>
           <Text
             style={{
