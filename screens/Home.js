@@ -6,10 +6,215 @@ import {
   Image,
   ScrollView,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import MarqueeText from 'react-native-marquee';
-import Svg, {G, Path} from 'react-native-svg';
+import Svg, {ClipPath, Defs, G, Path} from 'react-native-svg';
 import Swiper from 'react-native-swiper';
+import {
+  Bell,
+  Clipboard,
+  Grid,
+  Menu,
+  Settings,
+  ShoppingCart,
+  User,
+  X,
+} from 'react-native-feather';
+
+function SidePanel({onClose, navigation}) {
+  return (
+    <View
+      style={{
+        position: 'absolute',
+        backgroundColor: '#740E86a5',
+        width: '100%',
+        height: '100%',
+        padding: 20,
+      }}>
+      <TouchableOpacity onPress={onClose} style={{marginLeft: 'auto'}}>
+        <X size={20} color="#ffffff" />
+      </TouchableOpacity>
+      <View
+        style={{
+          backgroundColor: '#ffffff',
+          borderRadius: 8,
+          alignItems: 'center',
+          padding: 20,
+          marginVertical: 10,
+        }}>
+        <View
+          style={{flexDirection: 'row', alignItems: 'center', width: '100%'}}>
+          <Text
+            style={{
+              color: '#606060',
+              textAlign: 'center',
+              width: '40%',
+              textTransform: 'uppercase',
+              fontWeight: 'bold',
+            }}>
+            You have
+          </Text>
+          <View style={{width: '60%'}}>
+            <View
+              style={{
+                backgroundColor: '#ECECEC',
+                borderRadius: 50,
+                flexDirection: 'row',
+                width: '100%',
+                paddingVertical: 5,
+                paddingHorizontal: 10,
+                alignItems: 'center',
+                marginBottom: 10,
+              }}>
+              <Text
+                style={{color: '#FE516C', fontWeight: 'bold', width: '50%'}}>
+                242424
+              </Text>
+              <Text
+                style={{
+                  color: '#606060',
+                  fontWeight: 'bold',
+                  width: '50%',
+                  fontSize: 12,
+                  textTransform: 'uppercase',
+                }}>
+                PTS
+              </Text>
+            </View>
+            <View
+              style={{
+                backgroundColor: '#ECECEC',
+                borderRadius: 50,
+                flexDirection: 'row',
+                width: '100%',
+                paddingVertical: 5,
+                paddingHorizontal: 10,
+                alignItems: 'center',
+              }}>
+              <Text
+                style={{color: '#B01EC9', fontWeight: 'bold', width: '50%'}}>
+                242
+              </Text>
+              <Text
+                style={{
+                  color: '#606060',
+                  fontWeight: 'bold',
+                  width: '50%',
+                  fontSize: 12,
+                  textTransform: 'uppercase',
+                }}>
+                Purchases
+              </Text>
+            </View>
+          </View>
+        </View>
+        <TouchableOpacity
+          style={{
+            backgroundColor: '#FE516C',
+            flexDirection: 'row',
+            alignItems: 'center',
+            paddingVertical: 5,
+            paddingHorizontal: 10,
+            borderRadius: 50,
+            marginTop: 20,
+          }}>
+          <Svg
+            data-name="Group 670"
+            xmlns="http://www.w3.org/2000/svg"
+            width={14.628}
+            height={14.572}
+            style={{marginRight: 10}}
+            viewBox="0 0 14.628 14.572">
+            <Defs>
+              <ClipPath id="a">
+                <Path
+                  data-name="Rectangle 111"
+                  fill="#fff"
+                  d="M0 0H14.628V14.572H0z"
+                />
+              </ClipPath>
+            </Defs>
+            <G data-name="Group 669" clipPath="url(#a)" fill="#fff">
+              <Path
+                data-name="Path 794"
+                d="M13.324 87.346c0 .736.033 1.436-.011 2.131a1.089 1.089 0 01-1.136.932H1.238A1.142 1.142 0 010 89.165v-7.957a1.136 1.136 0 011.208-1.222h10.914a1.133 1.133 0 011.216 1.214c0 .527-.014 1.055.007 1.581.01.255-.088.3-.311.294a36.147 36.147 0 00-1.711 0 2.129 2.129 0 00-.579 4.178 2.811 2.811 0 00.715.09c.612.012 1.225 0 1.865 0"
+                transform="translate(0 -75.838)"
+              />
+              <Path
+                data-name="Path 795"
+                d="M38 .785h-.472a1.431 1.431 0 00-1.444 1.425c-.01.351 0 .7 0 1.073-.117.006-.2.015-.285.015h-3.5c-.186 0-.288-.05-.336-.233-.041-.158-.113-.307-.164-.463a.565.565 0 01.355-.774Q34.62.928 37.09.042a.562.562 0 01.777.358c.046.111.079.226.134.386"
+                transform="translate(-30.114)"
+              />
+              <Path
+                data-name="Path 796"
+                d="M196.666 158.532c-.449 0-.9.007-1.346 0a1.26 1.26 0 01-1.274-1.282 1.273 1.273 0 011.3-1.268c.915-.006 1.83 0 2.744 0 .368 0 .524.154.526.514v1.527c0 .367-.145.51-.521.512h-1.424zm-.91-1.264a.446.446 0 00-.421-.437.454.454 0 00-.439.421.448.448 0 00.424.434.442.442 0 00.437-.418"
+                transform="translate(-183.985 -147.89)"
+              />
+              <Path
+                data-name="Path 797"
+                d="M131.866 33.42c0-.405-.019-.793.006-1.178.018-.281.264-.449.6-.45h3.135c.233 0 .467-.006.7 0a.535.535 0 01.54.519c.013.362 0 .724 0 1.106z"
+                transform="translate(-125.022 -30.141)"
+              />
+            </G>
+          </Svg>
+          <Text style={{fontSize: 12}}>View Details</Text>
+        </TouchableOpacity>
+      </View>
+
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('Profile');
+        }}
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          marginVertical: 8,
+        }}>
+        <User size={20} color="#ffffff" style={{marginRight: 10}} />
+        <Text style={{color: '#ffffff', fontSize: 16}}>User Profile</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          marginVertical: 8,
+        }}>
+        <Settings size={20} color="#ffffff" style={{marginRight: 10}} />
+        <Text style={{color: '#ffffff', fontSize: 16}}>Settings</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          marginVertical: 8,
+        }}>
+        <Grid size={20} color="#ffffff" style={{marginRight: 10}} />
+        <Text style={{color: '#ffffff', fontSize: 16}}>Privacy Policy</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          marginVertical: 8,
+        }}>
+        <Clipboard size={20} color="#ffffff" style={{marginRight: 10}} />
+        <Text style={{color: '#ffffff', fontSize: 16}}>Terms & Conditions</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('Notifications');
+        }}
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          marginVertical: 8,
+        }}>
+        <Bell size={20} color="#ffffff" style={{marginRight: 10}} />
+        <Text style={{color: '#ffffff', fontSize: 16}}>Notifications</Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
 
 function StoreEntry() {
   return (
@@ -64,6 +269,7 @@ function StoreCard() {
 }
 
 export default function Home({navigation}) {
+  const [isSidePanel, setIsSidePanel] = useState(false);
   return (
     <SafeAreaView
       style={{
@@ -90,7 +296,10 @@ export default function Home({navigation}) {
           paddingVertical: 10,
           alignItems: 'center',
         }}>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            setIsSidePanel(true);
+          }}>
           <Svg
             xmlns="http://www.w3.org/2000/svg"
             width={25.425}
@@ -285,6 +494,14 @@ export default function Home({navigation}) {
           <Text style={{color: '#ffffff', fontSize: 10}}>Receipts</Text>
         </TouchableOpacity>
       </View>
+      {isSidePanel ? (
+        <SidePanel
+          navigation={navigation}
+          onClose={() => {
+            setIsSidePanel(false);
+          }}
+        />
+      ) : null}
     </SafeAreaView>
   );
 }

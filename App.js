@@ -23,7 +23,8 @@ export default function App() {
         screenOptions={{
           header: () => null,
         }}
-        initialRouteName="Notifications">
+        // initialRouteName="Notifications"
+      >
         <Stack.Screen name="Onboarding" component={Onboarding} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="SignUp" component={SignUp} />
