@@ -5,6 +5,8 @@ import {
   TouchableOpacity,
   Image,
   ScrollView,
+  ImageBackground,
+  TextInput,
 } from 'react-native';
 import React, {useState} from 'react';
 import MarqueeText from 'react-native-marquee';
@@ -20,6 +22,104 @@ import {
   User,
   X,
 } from 'react-native-feather';
+
+function ShopPopup({onClose, navigation}) {
+  return (
+    <View
+      style={{
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        backgroundColor: '#ffffffa9',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 20,
+      }}>
+      <ImageBackground
+        style={{
+          width: '100%',
+          elevation: 5,
+          borderRadius: 10,
+          overflow: 'hidden',
+        }}
+        source={require('../assets/shopPopup.png')}>
+        <ScrollView>
+          <View style={{padding: 20, position: 'relative'}}>
+            <TouchableOpacity
+              onPress={onClose}
+              style={{position: 'absolute', right: 20, top: 20, zIndex: 100}}>
+              <X size={20} color="#ffffff" />
+            </TouchableOpacity>
+            <Text
+              style={{
+                fontSize: 20,
+                fontWeight: 'bold',
+                color: '#ffffff',
+                textTransform: 'uppercase',
+                marginBottom: 10,
+              }}>
+              SHOP name
+            </Text>
+            <Text style={{color: '#ffffff', fontSize: 14}}>Points</Text>
+            <Text
+              style={{
+                color: '#ffffff',
+                fontSize: 16,
+                fontWeight: 'bold',
+                marginBottom: 10,
+              }}>
+              4343 pts
+            </Text>
+            <Text style={{color: '#ffffff', fontSize: 14}}>
+              Value of Discount
+            </Text>
+            <Text
+              style={{
+                color: '#ffffff',
+                fontSize: 16,
+                fontWeight: 'bold',
+                marginBottom: 10,
+              }}>
+              45%
+            </Text>
+            <Text style={{color: '#ffffff', fontSize: 14}}>Validity</Text>
+            <Text
+              style={{
+                color: '#ffffff',
+                fontSize: 16,
+                fontWeight: 'bold',
+                marginBottom: 30,
+              }}>
+              12/2/2022
+            </Text>
+            <TextInput
+              placeholder="Coupon Code"
+              style={{
+                paddingVertical: 7,
+                paddingHorizontal: 20,
+                borderWidth: 1,
+                borderColor: '#ffffff',
+                borderRadius: 50,
+                marginBottom: 10,
+                color: '#ffffff',
+              }}
+              placeholderTextColor="#ffffff"
+            />
+            <TouchableOpacity
+              style={{
+                backgroundColor: '#ffffff',
+                paddingVertical: 10,
+                borderRadius: 50,
+                alignItems: 'center',
+              }}>
+              <Text style={{color: '#0E0E17'}}>View On Map</Text>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
+      </ImageBackground>
+    </View>
+  );
+}
 
 function SidePanel({onClose, navigation}) {
   return (
@@ -216,9 +316,11 @@ function SidePanel({onClose, navigation}) {
   );
 }
 
-function StoreEntry() {
+function StoreEntry({onPress}) {
   return (
-    <TouchableOpacity style={{alignItems: 'center', marginRight: 18}}>
+    <TouchableOpacity
+      onPress={onPress}
+      style={{alignItems: 'center', marginRight: 18}}>
       <Image
         source={require('../assets/userPic.png')}
         style={{borderRadius: 50, width: 50, height: 50}}
@@ -270,6 +372,7 @@ function StoreCard() {
 
 export default function Home({navigation}) {
   const [isSidePanel, setIsSidePanel] = useState(false);
+  const [isShopPopup, setIsShopPopup] = useState(false);
   return (
     <SafeAreaView
       style={{
@@ -355,14 +458,61 @@ export default function Home({navigation}) {
           minHeight: 70,
           marginHorizontal: 20,
         }}>
-        <StoreEntry />
-        <StoreEntry />
-        <StoreEntry />
-        <StoreEntry />
-        <StoreEntry />
-        <StoreEntry />
-        <StoreEntry />
-        <StoreEntry />
+        <StoreEntry
+          onPress={() => {
+            setIsShopPopup(true);
+          }}
+        />
+        <StoreEntry
+          onPress={() => {
+            setIsShopPopup(true);
+          }}
+        />
+        <StoreEntry
+          onPress={() => {
+            setIsShopPopup(true);
+          }}
+        />
+        <StoreEntry
+          onPress={() => {
+            setIsShopPopup(true);
+          }}
+        />
+        <StoreEntry
+          onPress={() => {
+            setIsShopPopup(true);
+          }}
+        />
+        <StoreEntry
+          onPress={() => {
+            setIsShopPopup(true);
+          }}
+        />
+        <StoreEntry
+          onPress={() => {
+            setIsShopPopup(true);
+          }}
+        />
+        <StoreEntry
+          onPress={() => {
+            setIsShopPopup(true);
+          }}
+        />
+        <StoreEntry
+          onPress={() => {
+            setIsShopPopup(true);
+          }}
+        />
+        <StoreEntry
+          onPress={() => {
+            setIsShopPopup(true);
+          }}
+        />
+        <StoreEntry
+          onPress={() => {
+            setIsShopPopup(true);
+          }}
+        />
       </ScrollView>
       <ScrollView style={{width: '100%', paddingHorizontal: 20}}>
         <Swiper
@@ -499,6 +649,14 @@ export default function Home({navigation}) {
           navigation={navigation}
           onClose={() => {
             setIsSidePanel(false);
+          }}
+        />
+      ) : null}
+      {isShopPopup ? (
+        <ShopPopup
+          navigation={navigation}
+          onClose={() => {
+            setIsShopPopup(false);
           }}
         />
       ) : null}
