@@ -11,6 +11,8 @@ import Merchants from './screens/Merchants';
 import ScanInvoice from './screens/ScanInvoice';
 import Notifications from './screens/Notifications';
 import Profile from './screens/Profile';
+import ChangePassword from './screens/ChangePassword';
+import EditProfile from './screens/EditProfile';
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +33,8 @@ export default function App() {
         <Stack.Screen name="ScanInvoice" component={ScanInvoice} />
         <Stack.Screen name="Notifications" component={Notifications} />
         <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="EditProfile" component={EditProfile} />
+        <Stack.Screen name="ChangePassword" component={ChangePassword} />
       </Stack.Navigator>
     </NavigationContainer>
   );

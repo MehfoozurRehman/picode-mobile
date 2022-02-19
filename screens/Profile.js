@@ -1,11 +1,4 @@
-import {
-  View,
-  Text,
-  SafeAreaView,
-  TouchableOpacity,
-  Image,
-  ScrollView,
-} from 'react-native';
+import {View, Text, SafeAreaView, TouchableOpacity, Image} from 'react-native';
 import React from 'react';
 import Svg, {G, Path} from 'react-native-svg';
 import {Unlock, User} from 'react-native-feather';
@@ -81,6 +74,9 @@ export default function Profile({navigation}) {
               padding: 15,
             }}>
             <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('EditProfile');
+              }}
               style={{
                 flexDirection: 'row',
                 alignItems: 'center',
@@ -96,6 +92,9 @@ export default function Profile({navigation}) {
               </Text>
             </TouchableOpacity>
             <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('ChangePassword');
+              }}
               style={{
                 flexDirection: 'row',
                 alignItems: 'center',
