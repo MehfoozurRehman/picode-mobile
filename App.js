@@ -3,11 +3,13 @@ import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Onboarding from './screens/Onboarding';
-import {Text, View} from 'react-native';
 import Login from './screens/Login';
 import SignUp from './screens/SignUp';
 import ForgotPassword from './screens/ForgotPassword';
 import Home from './screens/Home';
+import Merchants from './screens/Merchants';
+import ScanInvoice from './screens/ScanInvoice';
+import Notifications from './screens/Notifications';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,12 +19,16 @@ export default function App() {
       <Stack.Navigator
         screenOptions={{
           header: () => null,
-        }}>
+        }}
+        initialRouteName="Notifications">
         <Stack.Screen name="Onboarding" component={Onboarding} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Merchants" component={Merchants} />
+        <Stack.Screen name="ScanInvoice" component={ScanInvoice} />
+        <Stack.Screen name="Notifications" component={Notifications} />
       </Stack.Navigator>
     </NavigationContainer>
   );

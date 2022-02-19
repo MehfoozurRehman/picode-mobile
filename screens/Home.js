@@ -63,7 +63,7 @@ function StoreCard() {
   );
 }
 
-export default function Home() {
+export default function Home({navigation}) {
   return (
     <SafeAreaView
       style={{
@@ -213,7 +213,10 @@ export default function Home() {
             }}>
             TOP 10
           </Text>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('Merchants');
+            }}>
             <Text
               style={{
                 color: '#FE516C',
