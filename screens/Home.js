@@ -119,7 +119,10 @@ export default function Home({navigation}) {
           source={require('../assets/logo.png')}
           style={{width: 50, height: 50}}
         />
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate('Profile');
+          }}>
           <Image
             source={require('../assets/userPic.png')}
             style={{borderRadius: 50, width: 40, height: 40}}

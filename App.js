@@ -10,6 +10,7 @@ import Home from './screens/Home';
 import Merchants from './screens/Merchants';
 import ScanInvoice from './screens/ScanInvoice';
 import Notifications from './screens/Notifications';
+import Profile from './screens/Profile';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,6 +30,7 @@ export default function App() {
         <Stack.Screen name="Merchants" component={Merchants} />
         <Stack.Screen name="ScanInvoice" component={ScanInvoice} />
         <Stack.Screen name="Notifications" component={Notifications} />
+        <Stack.Screen name="Profile" component={Profile} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -19,7 +19,13 @@ function NotificationCard() {
         marginBottom: 10,
         backgroundColor: '#ffffff',
       }}>
-      <Text style={{fontSize: 20, fontWeight: 'bold', color: '#283244'}}>
+      <Text
+        style={{
+          fontSize: 20,
+          fontWeight: 'bold',
+          color: '#283244',
+          textTransform: 'uppercase',
+        }}>
         Heading Here
       </Text>
       <Text style={{fontSize: 12, color: '#919191'}}>
@@ -80,6 +86,7 @@ export default function Notifications({navigation}) {
             color: '#283244',
             fontSize: 20,
             fontWeight: 'bold',
+            textTransform: 'uppercase',
           }}>
           Notifications
         </Text>
