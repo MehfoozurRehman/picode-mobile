@@ -6,9 +6,92 @@ import {
   Image,
   ScrollView,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import MarqueeText from 'react-native-marquee';
 import Svg, {G, Path} from 'react-native-svg';
+import InputBox from '../components/InputBox';
+import {ChevronDown, X} from 'react-native-feather';
+
+function SortPanelEntry({onPress}) {
+  return (
+    <TouchableOpacity onPress={onPress} style={{paddingVertical: 5}}>
+      <Text style={{color: '#283244'}}>Lowest to Heighets</Text>
+    </TouchableOpacity>
+  );
+}
+
+function SortPanel({onClose}) {
+  return (
+    <View
+      style={{
+        backgroundColor: '#ffffffa9',
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 20,
+      }}>
+      <View
+        style={{
+          backgroundColor: '#ffffff',
+          width: '100%',
+          borderRadius: 8,
+          elevation: 5,
+          padding: 20,
+          position: 'relative',
+        }}>
+        <TouchableOpacity
+          onPress={onClose}
+          style={{position: 'absolute', right: 20, top: 20, zIndex: 10}}>
+          <X size={20} color="#242424" />
+        </TouchableOpacity>
+        <Text
+          style={{
+            color: '#283244',
+            textTransform: 'uppercase',
+            fontWeight: 'bold',
+            fontSize: 16,
+            marginBottom: 10,
+          }}>
+          Sort Merchants
+        </Text>
+        <ScrollView style={{maxHeight: 200}}>
+          <SortPanelEntry onPress={onClose} />
+          <SortPanelEntry onPress={onClose} />
+          <SortPanelEntry onPress={onClose} />
+          <SortPanelEntry onPress={onClose} />
+          <SortPanelEntry onPress={onClose} />
+          <SortPanelEntry onPress={onClose} />
+          <SortPanelEntry onPress={onClose} />
+          <SortPanelEntry onPress={onClose} />
+          <SortPanelEntry onPress={onClose} />
+        </ScrollView>
+      </View>
+    </View>
+  );
+}
+
+function CategoryItem({selected, setSelected, id}) {
+  return (
+    <TouchableOpacity
+      style={{paddingVertical: 15, marginRight: 10}}
+      onPress={() => {
+        setSelected(id);
+      }}>
+      <Text
+        style={{
+          color: selected === id ? '#FE516C' : '#BFBFBF',
+          textTransform: 'uppercase',
+          textDecorationColor: '#FE516C',
+          textDecorationLine: selected === id ? 'underline' : 'none',
+          fontWeight: 'bold',
+        }}>
+        Category name
+      </Text>
+    </TouchableOpacity>
+  );
+}
 
 function StoreCard() {
   return (
@@ -51,6 +134,31 @@ function StoreCard() {
 }
 
 export default function Merchants({navigation}) {
+  const categoryList = [
+    {
+      id: 1,
+    },
+    {
+      id: 2,
+    },
+    {
+      id: 3,
+    },
+    {
+      id: 4,
+    },
+    {
+      id: 5,
+    },
+    {
+      id: 6,
+    },
+    {
+      id: 7,
+    },
+  ];
+  const [selected, setSelected] = useState(1);
+  const [isSortPanel, setIsSortPanel] = useState(false);
   return (
     <SafeAreaView
       style={{
@@ -103,6 +211,34 @@ export default function Merchants({navigation}) {
           Merchants
         </Text>
       </View>
+      <View style={{marginHorizontal: 20}}>
+        <InputBox placeholder="Search" />
+        <TouchableOpacity
+          onPress={() => {
+            setIsSortPanel(true);
+          }}
+          style={{
+            padding: 10,
+            height: 50,
+            flexDirection: 'row',
+            alignItems: 'center',
+            backgroundColor: '#ffffff',
+            borderRadius: 5,
+            justifyContent: 'space-between',
+          }}>
+          <Text style={{color: '#888888'}}>Highest to Lowest</Text>
+          <ChevronDown stroke="#FE516C" fill="#fff" width={20} height={20} />
+        </TouchableOpacity>
+        <ScrollView horizontal={true}>
+          {categoryList.map(item => (
+            <CategoryItem
+              selected={selected}
+              setSelected={setSelected}
+              id={item.id}
+            />
+          ))}
+        </ScrollView>
+      </View>
       <ScrollView style={{width: '100%', paddingHorizontal: 20}}>
         <StoreCard />
         <StoreCard />
@@ -117,6 +253,7 @@ export default function Merchants({navigation}) {
         <StoreCard />
         <StoreCard />
       </ScrollView>
+      {isSortPanel ? <SortPanel onClose={() => setIsSortPanel(false)} /> : null}
     </SafeAreaView>
   );
 }

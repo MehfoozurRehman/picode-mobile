@@ -617,6 +617,9 @@ export default function Home({navigation}) {
           <Text style={{color: '#ffffff', fontSize: 10}}>Wallet</Text>
         </TouchableOpacity>
         <TouchableOpacity
+          onPress={() => {
+            navigation.navigate('ScanInvoice');
+          }}
           style={{
             width: 100,
             height: 100,

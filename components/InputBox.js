@@ -8,7 +8,7 @@ import {
   Dimensions,
 } from 'react-native';
 import React, {useState} from 'react';
-import {Eye, EyeOff} from 'react-native-feather';
+import {Eye, EyeOff, Search} from 'react-native-feather';
 
 export default function InputBox({
   placeholder,
@@ -73,6 +73,13 @@ export default function InputBox({
           ) : (
             <EyeOff stroke="#545454" fill="#fff" width={20} height={20} />
           )}
+        </TouchableOpacity>
+      ) : null}
+      {placeholder === 'Search' ? (
+        <TouchableOpacity
+          style={{position: 'absolute', right: 0, bottom: 5}}
+          onPress={() => {}}>
+          <Search stroke="#545454" fill="#fff" width={20} height={20} />
         </TouchableOpacity>
       ) : null}
     </View>
