@@ -126,7 +126,7 @@ function SidePanel({onClose, navigation}) {
     <View
       style={{
         position: 'absolute',
-        backgroundColor: '#740E86a5',
+        backgroundColor: 'rgba(116,14,134,.9)',
         width: '100%',
         height: '100%',
         padding: 20,
@@ -609,7 +609,11 @@ export default function Home({navigation}) {
           alignItems: 'center',
           position: 'relative',
         }}>
-        <TouchableOpacity style={{alignItems: 'center', width: '20%'}}>
+        <TouchableOpacity
+          style={{alignItems: 'center', width: '20%'}}
+          onPress={() => {
+            navigation.navigate('Wallet');
+          }}>
           <Image
             source={require('../assets/walletIcon.png')}
             style={{width: 40, height: 40}}
@@ -639,7 +643,11 @@ export default function Home({navigation}) {
             Scan & Upload Invoice
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={{alignItems: 'center', width: '20%'}}>
+        <TouchableOpacity
+          style={{alignItems: 'center', width: '20%'}}
+          onPress={() => {
+            navigation.navigate('Wallet');
+          }}>
           <Image
             source={require('../assets/walletIcon.png')}
             style={{width: 40, height: 40}}

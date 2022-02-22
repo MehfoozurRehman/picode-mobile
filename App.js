@@ -13,6 +13,7 @@ import Notifications from './screens/Notifications';
 import Profile from './screens/Profile';
 import ChangePassword from './screens/ChangePassword';
 import EditProfile from './screens/EditProfile';
+import Wallet from './screens/Wallet';
 
 const Stack = createNativeStackNavigator();
 
@@ -36,6 +37,7 @@ export default function App() {
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="EditProfile" component={EditProfile} />
         <Stack.Screen name="ChangePassword" component={ChangePassword} />
+        <Stack.Screen name="Wallet" component={Wallet} />
       </Stack.Navigator>
     </NavigationContainer>
   );
