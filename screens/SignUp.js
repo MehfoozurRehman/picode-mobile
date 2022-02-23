@@ -207,7 +207,10 @@ function SignUp3({navigation}) {
           />
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate('Home');
+              navigation.navigate('Registered');
+              setTimeout(() => {
+                navigation.navigate('Home');
+              }, 1000);
             }}
             style={{
               backgroundColor: '#FE516C',

@@ -15,6 +15,7 @@ export default function InputBox({
   error,
   errorMessage,
   secureTextEntry,
+  style,
 }) {
   const [focus, setFocus] = useState(false);
   const [isSecureTextEntry, setIsSecureTextEntry] = useState(secureTextEntry);
@@ -58,6 +59,7 @@ export default function InputBox({
           borderBottomColor: '#545454',
           fontSize: 16,
           color: '#545454',
+          ...style,
         }}
       />
       {secureTextEntry ? (

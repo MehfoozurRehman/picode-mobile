@@ -209,6 +209,9 @@ function SidePanel({onClose, navigation}) {
           </View>
         </View>
         <TouchableOpacity
+          onPress={() => {
+            navigation.navigate('AddCard');
+          }}
           style={{
             backgroundColor: '#FE516C',
             flexDirection: 'row',
@@ -257,7 +260,7 @@ function SidePanel({onClose, navigation}) {
               />
             </G>
           </Svg>
-          <Text style={{fontSize: 12}}>View Details</Text>
+          <Text style={{fontSize: 12, color: '#ffffff'}}>View Details</Text>
         </TouchableOpacity>
       </View>
 
@@ -268,34 +271,42 @@ function SidePanel({onClose, navigation}) {
         style={{
           flexDirection: 'row',
           alignItems: 'center',
-          marginVertical: 8,
+          marginVertical: 12,
         }}>
         <User size={20} color="#ffffff" style={{marginRight: 10}} />
-        <Text style={{color: '#ffffff', fontSize: 16}}>User Profile</Text>
+        <Text style={{color: '#ffffff', fontSize: 16, flex: 1}}>
+          User Profile
+        </Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={{
           flexDirection: 'row',
           alignItems: 'center',
-          marginVertical: 8,
+          marginVertical: 12,
         }}>
         <Settings size={20} color="#ffffff" style={{marginRight: 10}} />
         <Text style={{color: '#ffffff', fontSize: 16}}>Settings</Text>
       </TouchableOpacity>
       <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('PrivacyPolicy');
+        }}
         style={{
           flexDirection: 'row',
           alignItems: 'center',
-          marginVertical: 8,
+          marginVertical: 12,
         }}>
         <Grid size={20} color="#ffffff" style={{marginRight: 10}} />
         <Text style={{color: '#ffffff', fontSize: 16}}>Privacy Policy</Text>
       </TouchableOpacity>
       <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('TermsAndConditions');
+        }}
         style={{
           flexDirection: 'row',
           alignItems: 'center',
-          marginVertical: 8,
+          marginVertical: 12,
         }}>
         <Clipboard size={20} color="#ffffff" style={{marginRight: 10}} />
         <Text style={{color: '#ffffff', fontSize: 16}}>Terms & Conditions</Text>
@@ -307,7 +318,7 @@ function SidePanel({onClose, navigation}) {
         style={{
           flexDirection: 'row',
           alignItems: 'center',
-          marginVertical: 8,
+          marginVertical: 12,
         }}>
         <Bell size={20} color="#ffffff" style={{marginRight: 10}} />
         <Text style={{color: '#ffffff', fontSize: 16}}>Notifications</Text>
@@ -330,9 +341,10 @@ function StoreEntry({onPress}) {
   );
 }
 
-function StoreCard() {
+function StoreCard({onPress}) {
   return (
     <TouchableOpacity
+      onPress={onPress}
       style={{
         backgroundColor: '#B1A4D0',
         paddingHorizontal: 15,
@@ -372,7 +384,7 @@ function StoreCard() {
 
 export default function Home({navigation}) {
   const [isSidePanel, setIsSidePanel] = useState(false);
-  const [isShopPopup, setIsShopPopup] = useState(false);
+
   return (
     <SafeAreaView
       style={{
@@ -460,57 +472,42 @@ export default function Home({navigation}) {
         }}>
         <StoreEntry
           onPress={() => {
-            setIsShopPopup(true);
+            navigation.navigate('OfferDetails');
           }}
         />
         <StoreEntry
           onPress={() => {
-            setIsShopPopup(true);
+            navigation.navigate('OfferDetails');
           }}
         />
         <StoreEntry
           onPress={() => {
-            setIsShopPopup(true);
+            navigation.navigate('OfferDetails');
           }}
         />
         <StoreEntry
           onPress={() => {
-            setIsShopPopup(true);
+            navigation.navigate('OfferDetails');
           }}
         />
         <StoreEntry
           onPress={() => {
-            setIsShopPopup(true);
+            navigation.navigate('OfferDetails');
           }}
         />
         <StoreEntry
           onPress={() => {
-            setIsShopPopup(true);
+            navigation.navigate('OfferDetails');
           }}
         />
         <StoreEntry
           onPress={() => {
-            setIsShopPopup(true);
+            navigation.navigate('OfferDetails');
           }}
         />
         <StoreEntry
           onPress={() => {
-            setIsShopPopup(true);
-          }}
-        />
-        <StoreEntry
-          onPress={() => {
-            setIsShopPopup(true);
-          }}
-        />
-        <StoreEntry
-          onPress={() => {
-            setIsShopPopup(true);
-          }}
-        />
-        <StoreEntry
-          onPress={() => {
-            setIsShopPopup(true);
+            navigation.navigate('OfferDetails');
           }}
         />
       </ScrollView>
@@ -589,14 +586,71 @@ export default function Home({navigation}) {
             </Text>
           </TouchableOpacity>
         </View>
-        <StoreCard />
-        <StoreCard />
-        <StoreCard />
-        <StoreCard />
-        <StoreCard />
-        <StoreCard />
-        <StoreCard />
-        <StoreCard />
+        <StoreCard
+          onPress={() => {
+            navigation.navigate('Merchant');
+          }}
+        />
+        <StoreCard
+          onPress={() => {
+            navigation.navigate('Merchant');
+          }}
+        />
+        <StoreCard
+          onPress={() => {
+            navigation.navigate('Merchant');
+          }}
+        />
+        <StoreCard
+          onPress={() => {
+            navigation.navigate('Merchant');
+          }}
+        />
+        <StoreCard
+          onPress={() => {
+            navigation.navigate('Merchant');
+          }}
+        />
+        <StoreCard
+          onPress={() => {
+            navigation.navigate('Merchant');
+          }}
+        />
+        <StoreCard
+          onPress={() => {
+            navigation.navigate('Merchant');
+          }}
+        />
+        <StoreCard
+          onPress={() => {
+            navigation.navigate('Merchant');
+          }}
+        />
+        <StoreCard
+          onPress={() => {
+            navigation.navigate('Merchant');
+          }}
+        />
+        <StoreCard
+          onPress={() => {
+            navigation.navigate('Merchant');
+          }}
+        />
+        <StoreCard
+          onPress={() => {
+            navigation.navigate('Merchant');
+          }}
+        />
+        <StoreCard
+          onPress={() => {
+            navigation.navigate('Merchant');
+          }}
+        />
+        <StoreCard
+          onPress={() => {
+            navigation.navigate('Merchant');
+          }}
+        />
       </ScrollView>
       <View
         style={{
@@ -660,14 +714,6 @@ export default function Home({navigation}) {
           navigation={navigation}
           onClose={() => {
             setIsSidePanel(false);
-          }}
-        />
-      ) : null}
-      {isShopPopup ? (
-        <ShopPopup
-          navigation={navigation}
-          onClose={() => {
-            setIsShopPopup(false);
           }}
         />
       ) : null}

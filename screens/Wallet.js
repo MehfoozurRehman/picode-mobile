@@ -171,7 +171,14 @@ function RecieptCard({invoiceNo, daysAgo, points, afterCoupon}) {
     </TouchableOpacity>
   );
 }
-function MarchantsCard({title, points, pointsPercentage, targetPts}) {
+function MarchantsCard({
+  title,
+  points,
+  pointsPercentage,
+  targetPts,
+  promo,
+  onPress,
+}) {
   return (
     <TouchableOpacity
       style={{
@@ -186,9 +193,37 @@ function MarchantsCard({title, points, pointsPercentage, targetPts}) {
         style={{marginRight: 10}}
       />
       <View style={{flex: 1}}>
-        <Text style={{fontSize: 16, fontWeight: 'bold', color: '#000000'}}>
-          {title}
-        </Text>
+        <View
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}>
+          <Text style={{fontSize: 16, fontWeight: 'bold', color: '#000000'}}>
+            {title}
+          </Text>
+          {promo ? (
+            <TouchableOpacity
+              onPress={onPress}
+              style={{
+                backgroundColor: '#ffffff',
+                paddingVertical: 8,
+                paddingHorizontal: 16,
+                borderRadius: 20,
+              }}>
+              <Text
+                style={{
+                  fontSize: 12,
+                  color: '#242424',
+                  alignSelf: 'center',
+                  fontWeight: 'bold',
+                }}>
+                Get Promo
+              </Text>
+            </TouchableOpacity>
+          ) : null}
+        </View>
         <View
           style={{
             width: pointsPercentage ? pointsPercentage : '100%',
@@ -307,7 +342,8 @@ function WalletFilter({title, selected, onPress}) {
 export default function Wallet({navigation}) {
   const [isMerchant, setIsMerchant] = useState(true);
   const [isSortPanel, setIsSortPanel] = useState(false);
-  const [isShopPopup, setIsShopPopup] = useState(true);
+  const [isShopPopup, setIsShopPopup] = useState(false);
+
   return (
     <SafeAreaView
       style={{
@@ -486,13 +522,7 @@ export default function Wallet({navigation}) {
             <MarchantsCard
               title="Merchants Name Here"
               points={123}
-              pointsPercentage="45%"
-              targetPts={4000}
-            />
-            <MarchantsCard
-              title="Merchants Name Here"
-              points={123}
-              pointsPercentage="100%"
+              pointsPercentage="35%"
               targetPts={4000}
             />
             <MarchantsCard
@@ -506,11 +536,15 @@ export default function Wallet({navigation}) {
               points={123}
               pointsPercentage="45%"
               targetPts={4000}
+              promo="Get Promo"
+              onPress={() => {
+                setIsShopPopup(true);
+              }}
             />
             <MarchantsCard
               title="Merchants Name Here"
               points={123}
-              pointsPercentage="65%"
+              pointsPercentage="67%"
               targetPts={4000}
             />
             <MarchantsCard
@@ -518,29 +552,27 @@ export default function Wallet({navigation}) {
               points={123}
               pointsPercentage="45%"
               targetPts={4000}
+              promo="Get Promo"
+              onPress={() => {
+                setIsShopPopup(true);
+              }}
             />
             <MarchantsCard
               title="Merchants Name Here"
               points={123}
-              pointsPercentage="100%"
+              pointsPercentage="35%"
               targetPts={4000}
             />
             <MarchantsCard
               title="Merchants Name Here"
               points={123}
-              pointsPercentage="80%"
+              pointsPercentage="35%"
               targetPts={4000}
             />
             <MarchantsCard
               title="Merchants Name Here"
               points={123}
-              pointsPercentage="45%"
-              targetPts={4000}
-            />
-            <MarchantsCard
-              title="Merchants Name Here"
-              points={123}
-              pointsPercentage="65%"
+              pointsPercentage="35%"
               targetPts={4000}
             />
           </>
