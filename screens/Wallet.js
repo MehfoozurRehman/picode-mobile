@@ -6,14 +6,113 @@ import {
   Image,
   ScrollView,
   ImageBackground,
+  TextInput,
 } from 'react-native';
 import React, {useState} from 'react';
 import Svg, {G, Path} from 'react-native-svg';
 import {ChevronDown, X} from 'react-native-feather';
 
-function RecieptCard({invoiceNo, daysAgo, points, afterCoupon}) {
+function ShopPopup({onClose, navigation}) {
   return (
     <View
+      style={{
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        backgroundColor: '#ffffffa9',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 20,
+      }}>
+      <ImageBackground
+        style={{
+          width: '100%',
+          elevation: 5,
+          borderRadius: 10,
+          overflow: 'hidden',
+        }}
+        source={require('../assets/shopPopup.png')}>
+        <ScrollView>
+          <View style={{padding: 20, position: 'relative'}}>
+            <TouchableOpacity
+              onPress={onClose}
+              style={{position: 'absolute', right: 20, top: 20, zIndex: 100}}>
+              <X size={20} color="#ffffff" />
+            </TouchableOpacity>
+            <Text
+              style={{
+                fontSize: 20,
+                fontWeight: 'bold',
+                color: '#ffffff',
+                textTransform: 'uppercase',
+                marginBottom: 10,
+              }}>
+              SHOP name
+            </Text>
+            <Text style={{color: '#ffffff', fontSize: 14}}>Points</Text>
+            <Text
+              style={{
+                color: '#ffffff',
+                fontSize: 16,
+                fontWeight: 'bold',
+                marginBottom: 10,
+              }}>
+              4343 pts
+            </Text>
+            <Text style={{color: '#ffffff', fontSize: 14}}>
+              Value of Discount
+            </Text>
+            <Text
+              style={{
+                color: '#ffffff',
+                fontSize: 16,
+                fontWeight: 'bold',
+                marginBottom: 10,
+              }}>
+              45%
+            </Text>
+            <Text style={{color: '#ffffff', fontSize: 14}}>Validity</Text>
+            <Text
+              style={{
+                color: '#ffffff',
+                fontSize: 16,
+                fontWeight: 'bold',
+                marginBottom: 30,
+              }}>
+              12/2/2022
+            </Text>
+            <TextInput
+              placeholder="Coupon Code"
+              style={{
+                paddingVertical: 7,
+                paddingHorizontal: 20,
+                borderWidth: 1,
+                borderColor: '#ffffff',
+                borderRadius: 50,
+                marginBottom: 10,
+                color: '#ffffff',
+              }}
+              placeholderTextColor="#ffffff"
+            />
+            <TouchableOpacity
+              style={{
+                backgroundColor: '#ffffff',
+                paddingVertical: 10,
+                borderRadius: 50,
+                alignItems: 'center',
+              }}>
+              <Text style={{color: '#0E0E17'}}>View On Map</Text>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
+      </ImageBackground>
+    </View>
+  );
+}
+
+function RecieptCard({invoiceNo, daysAgo, points, afterCoupon}) {
+  return (
+    <TouchableOpacity
       style={{
         backgroundColor: '#ffffff',
         padding: 15,
@@ -69,12 +168,12 @@ function RecieptCard({invoiceNo, daysAgo, points, afterCoupon}) {
           {afterCoupon} pts
         </Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 function MarchantsCard({title, points, pointsPercentage, targetPts}) {
   return (
-    <View
+    <TouchableOpacity
       style={{
         backgroundColor: '#B1A4D0',
         padding: 15,
@@ -118,7 +217,7 @@ function MarchantsCard({title, points, pointsPercentage, targetPts}) {
           </Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
@@ -208,6 +307,7 @@ function WalletFilter({title, selected, onPress}) {
 export default function Wallet({navigation}) {
   const [isMerchant, setIsMerchant] = useState(true);
   const [isSortPanel, setIsSortPanel] = useState(false);
+  const [isShopPopup, setIsShopPopup] = useState(true);
   return (
     <SafeAreaView
       style={{
@@ -516,6 +616,14 @@ export default function Wallet({navigation}) {
         )}
       </ScrollView>
       {isSortPanel ? <SortPanel onClose={() => setIsSortPanel(false)} /> : null}
+      {isShopPopup ? (
+        <ShopPopup
+          navigation={navigation}
+          onClose={() => {
+            setIsShopPopup(false);
+          }}
+        />
+      ) : null}
     </SafeAreaView>
   );
 }
