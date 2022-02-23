@@ -209,9 +209,6 @@ function SidePanel({onClose, navigation}) {
           </View>
         </View>
         <TouchableOpacity
-          onPress={() => {
-            navigation.navigate('AddCard');
-          }}
           style={{
             backgroundColor: '#FE516C',
             flexDirection: 'row',
