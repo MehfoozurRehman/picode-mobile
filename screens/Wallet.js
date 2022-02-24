@@ -95,6 +95,9 @@ function ShopPopup({onClose, navigation}) {
               placeholderTextColor="#ffffff"
             />
             <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('MapView');
+              }}
               style={{
                 backgroundColor: '#ffffff',
                 paddingVertical: 10,
@@ -208,13 +211,13 @@ function MarchantsCard({
               onPress={onPress}
               style={{
                 backgroundColor: '#ffffff',
-                paddingVertical: 8,
-                paddingHorizontal: 16,
+                paddingVertical: 4,
+                paddingHorizontal: 6,
                 borderRadius: 20,
               }}>
               <Text
                 style={{
-                  fontSize: 12,
+                  fontSize: 10,
                   color: '#242424',
                   alignSelf: 'center',
                   fontWeight: 'bold',

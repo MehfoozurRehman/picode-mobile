@@ -17,8 +17,9 @@ import Wallet from './screens/Wallet';
 import TermsAndConditions from './screens/TermsAndConditions';
 import PrivacyPolicy from './screens/PrivacyPolicy';
 import OfferDetails from './screens/OfferDetails';
-import Merchant from './screens/Merchant';
+import MerchantProfile from './screens/MerchantProfile';
 import Registered from './screens/Registered';
+import MapViewScreen from './screens/MapViewScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,7 +30,7 @@ export default function App() {
         screenOptions={{
           header: () => null,
         }}
-        // initialRouteName="OfferDetails"
+        // initialRouteName="Login"
       >
         <Stack.Screen name="Onboarding" component={Onboarding} />
         <Stack.Screen name="Login" component={Login} />
@@ -49,8 +50,9 @@ export default function App() {
         />
         <Stack.Screen name="PrivacyPolicy" component={PrivacyPolicy} />
         <Stack.Screen name="OfferDetails" component={OfferDetails} />
-        <Stack.Screen name="Merchant" component={Merchant} />
+        <Stack.Screen name="Merchant" component={MerchantProfile} />
         <Stack.Screen name="Registered" component={Registered} />
+        <Stack.Screen name="MapView" component={MapViewScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

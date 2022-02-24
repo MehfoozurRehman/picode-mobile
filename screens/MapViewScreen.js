@@ -1,32 +1,54 @@
 import {
   View,
   Text,
-  SafeAreaView,
+  StyleSheet,
+  Dimensions,
   TouchableOpacity,
-  Image,
-  ScrollView,
 } from 'react-native';
 import React from 'react';
+import MapView, {PROVIDER_GOOGLE} from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
 import Svg, {G, Path} from 'react-native-svg';
 
-export default function Merchant({navigation}) {
+const styles = StyleSheet.create({
+  container: {
+    ...StyleSheet.absoluteFillObject,
+  },
+  map: {
+    ...StyleSheet.absoluteFillObject,
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
+  },
+});
+
+export default function MapViewScreen({navigation}) {
   return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-        backgroundColor: '#F9F9F9',
-      }}>
+    <View style={styles.container}>
+      <View>
+        <MapView
+          provider={PROVIDER_GOOGLE} // remove if not using Google Maps
+          style={styles.map}
+          region={{
+            latitude: 37.78825,
+            longitude: -122.4324,
+            latitudeDelta: 0.015,
+            longitudeDelta: 0.0121,
+          }}
+        />
+      </View>
       <View
         style={{
-          marginHorizontal: 20,
-          marginVertical: 10,
+          paddingHorizontal: 20,
+          paddingVertical: 20,
+          borderBottomRightRadius: 20,
+          borderBottomLeftRadius: 20,
           flexDirection: 'row',
           justifyContent: 'space-between',
           alignItems: 'center',
+          backgroundColor: '#ffffff',
         }}>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate('OfferDetails');
+            navigation.navigate('Wallet');
           }}>
           <Svg
             xmlns="http://www.w3.org/2000/svg"
@@ -48,10 +70,9 @@ export default function Merchant({navigation}) {
             fontWeight: 'bold',
             textTransform: 'uppercase',
           }}>
-          Merchant Name
+          Location
         </Text>
       </View>
-      <ScrollView style={{width: '100%', paddingHorizontal: 20}}></ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
