@@ -12,118 +12,14 @@ import React, {useState} from 'react';
 import MarqueeText from 'react-native-marquee';
 import Svg, {ClipPath, Defs, G, Path} from 'react-native-svg';
 import Swiper from 'react-native-swiper';
-import {
-  Bell,
-  Clipboard,
-  Grid,
-  Menu,
-  Settings,
-  ShoppingCart,
-  User,
-  X,
-} from 'react-native-feather';
-
-function ShopPopup({onClose, navigation}) {
-  return (
-    <View
-      style={{
-        position: 'absolute',
-        width: '100%',
-        height: '100%',
-        backgroundColor: '#ffffffa9',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: 20,
-      }}>
-      <ImageBackground
-        style={{
-          width: '100%',
-          elevation: 5,
-          borderRadius: 10,
-          overflow: 'hidden',
-        }}
-        source={require('../assets/shopPopup.png')}>
-        <ScrollView>
-          <View style={{padding: 20, position: 'relative'}}>
-            <TouchableOpacity
-              onPress={onClose}
-              style={{position: 'absolute', right: 20, top: 20, zIndex: 100}}>
-              <X size={20} color="#ffffff" />
-            </TouchableOpacity>
-            <Text
-              style={{
-                fontSize: 20,
-                fontWeight: 'bold',
-                color: '#ffffff',
-                textTransform: 'uppercase',
-                marginBottom: 10,
-              }}>
-              SHOP name
-            </Text>
-            <Text style={{color: '#ffffff', fontSize: 14}}>Points</Text>
-            <Text
-              style={{
-                color: '#ffffff',
-                fontSize: 16,
-                fontWeight: 'bold',
-                marginBottom: 10,
-              }}>
-              4343 pts
-            </Text>
-            <Text style={{color: '#ffffff', fontSize: 14}}>
-              Value of Discount
-            </Text>
-            <Text
-              style={{
-                color: '#ffffff',
-                fontSize: 16,
-                fontWeight: 'bold',
-                marginBottom: 10,
-              }}>
-              45%
-            </Text>
-            <Text style={{color: '#ffffff', fontSize: 14}}>Validity</Text>
-            <Text
-              style={{
-                color: '#ffffff',
-                fontSize: 16,
-                fontWeight: 'bold',
-                marginBottom: 30,
-              }}>
-              12/2/2022
-            </Text>
-            <TextInput
-              placeholder="Coupon Code"
-              style={{
-                paddingVertical: 7,
-                paddingHorizontal: 20,
-                borderWidth: 1,
-                borderColor: '#ffffff',
-                borderRadius: 50,
-                marginBottom: 10,
-                color: '#ffffff',
-              }}
-              placeholderTextColor="#ffffff"
-            />
-            <TouchableOpacity
-              style={{
-                backgroundColor: '#ffffff',
-                paddingVertical: 10,
-                borderRadius: 50,
-                alignItems: 'center',
-              }}>
-              <Text style={{color: '#0E0E17'}}>View On Map</Text>
-            </TouchableOpacity>
-          </View>
-        </ScrollView>
-      </ImageBackground>
-    </View>
-  );
-}
+import {Bell, Clipboard, Grid, Settings, User, X} from 'react-native-feather';
+import Animated, {SlideInLeft, SlideOutLeft} from 'react-native-reanimated';
 
 function SidePanel({onClose, navigation}) {
   return (
-    <View
+    <Animated.View
+      entering={SlideInLeft.duration(500)}
+      exiting={SlideOutLeft.duration(500)}
       style={{
         position: 'absolute',
         backgroundColor: 'rgba(116,14,134,.9)',
@@ -320,7 +216,7 @@ function SidePanel({onClose, navigation}) {
         <Bell size={20} color="#ffffff" style={{marginRight: 10}} />
         <Text style={{color: '#ffffff', fontSize: 16}}>Notifications</Text>
       </TouchableOpacity>
-    </View>
+    </Animated.View>
   );
 }
 

@@ -11,10 +11,18 @@ import {
 import React, {useState} from 'react';
 import Svg, {G, Path} from 'react-native-svg';
 import {ChevronDown, X} from 'react-native-feather';
+import Animated, {
+  FadeIn,
+  FadeInDown,
+  FadeOut,
+  FadeOutDown,
+} from 'react-native-reanimated';
 
 function ShopPopup({onClose, navigation}) {
   return (
-    <View
+    <Animated.View
+      entering={FadeIn}
+      exiting={FadeOut}
       style={{
         position: 'absolute',
         width: '100%',
@@ -109,7 +117,7 @@ function ShopPopup({onClose, navigation}) {
           </View>
         </ScrollView>
       </ImageBackground>
-    </View>
+    </Animated.View>
   );
 }
 
@@ -269,7 +277,9 @@ function SortPanelEntry({onPress}) {
 
 function SortPanel({onClose}) {
   return (
-    <View
+    <Animated.View
+      entering={FadeInDown}
+      exiting={FadeOutDown}
       style={{
         backgroundColor: '#ffffffa9',
         position: 'absolute',
@@ -315,7 +325,7 @@ function SortPanel({onClose}) {
           <SortPanelEntry onPress={onClose} />
         </ScrollView>
       </View>
-    </View>
+    </Animated.View>
   );
 }
 
