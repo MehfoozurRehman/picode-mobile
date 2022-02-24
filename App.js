@@ -20,10 +20,14 @@ import OfferDetails from './screens/OfferDetails';
 import MerchantProfile from './screens/MerchantProfile';
 import Registered from './screens/Registered';
 import MapViewScreen from './screens/MapViewScreen';
+import SplashScreen from 'react-native-splash-screen';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  React.useEffect(() => {
+    SplashScreen.hide();
+  }, []);
   return (
     <NavigationContainer>
       <Stack.Navigator
