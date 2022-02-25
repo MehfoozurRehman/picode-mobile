@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import React from 'react';
 import Svg, {G, Path} from 'react-native-svg';
+import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 
 export default function ScanInvoice({navigation}) {
   return (
@@ -61,6 +62,11 @@ export default function ScanInvoice({navigation}) {
             height: Dimensions.get('window').height,
           }}></View>
         <TouchableOpacity
+          onPress={() => {
+            launchImageLibrary({
+              mediaType: 'mixed',
+            });
+          }}
           style={{
             width: 80,
             height: 80,
