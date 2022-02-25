@@ -105,7 +105,7 @@ function StoreCard() {
         marginBottom: 10,
       }}>
       <Image
-        source={require('../assets/userPic.png')}
+        source={require('../assets/merchantPic5.png')}
         style={{borderRadius: 50, width: 50, height: 50, marginRight: 10}}
       />
       <View style={{flex: 1, justifyContent: 'center'}}>

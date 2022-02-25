@@ -220,15 +220,12 @@ function SidePanel({onClose, navigation}) {
   );
 }
 
-function StoreEntry({onPress}) {
+function StoreEntry({onPress, img}) {
   return (
     <TouchableOpacity
       onPress={onPress}
       style={{alignItems: 'center', marginRight: 18}}>
-      <Image
-        source={require('../assets/userPic.png')}
-        style={{borderRadius: 50, width: 50, height: 50}}
-      />
+      <Image source={img} style={{borderRadius: 50, width: 50, height: 50}} />
       <Text style={{color: '#2F2F2F', fontSize: 12}}>20%</Text>
     </TouchableOpacity>
   );
@@ -247,7 +244,7 @@ function StoreCard({onPress}) {
         marginBottom: 10,
       }}>
       <Image
-        source={require('../assets/userPic.png')}
+        source={require('../assets/merchantPic4.png')}
         style={{borderRadius: 50, width: 50, height: 50, marginRight: 10}}
       />
       <View style={{flex: 1, justifyContent: 'center'}}>
@@ -364,41 +361,61 @@ export default function Home({navigation}) {
           marginHorizontal: 20,
         }}>
         <StoreEntry
+          img={require('../assets/merchantPic1.png')}
           onPress={() => {
             navigation.navigate('OfferDetails');
           }}
         />
         <StoreEntry
+          img={require('../assets/merchantPic2.png')}
           onPress={() => {
             navigation.navigate('OfferDetails');
           }}
         />
         <StoreEntry
+          img={require('../assets/merchantPic3.png')}
           onPress={() => {
             navigation.navigate('OfferDetails');
           }}
         />
         <StoreEntry
+          img={require('../assets/merchantPic4.png')}
           onPress={() => {
             navigation.navigate('OfferDetails');
           }}
         />
         <StoreEntry
+          img={require('../assets/merchantPic5.png')}
           onPress={() => {
             navigation.navigate('OfferDetails');
           }}
         />
         <StoreEntry
+          img={require('../assets/merchantPic1.png')}
           onPress={() => {
             navigation.navigate('OfferDetails');
           }}
         />
         <StoreEntry
+          img={require('../assets/merchantPic4.png')}
           onPress={() => {
             navigation.navigate('OfferDetails');
           }}
         />
         <StoreEntry
+          img={require('../assets/merchantPic2.png')}
+          onPress={() => {
+            navigation.navigate('OfferDetails');
+          }}
+        />
+        <StoreEntry
+          img={require('../assets/merchantPic2.png')}
+          onPress={() => {
+            navigation.navigate('OfferDetails');
+          }}
+        />
+        <StoreEntry
+          img={require('../assets/merchantPic2.png')}
           onPress={() => {
             navigation.navigate('OfferDetails');
           }}
@@ -549,12 +566,13 @@ export default function Home({navigation}) {
         style={{
           backgroundColor: '#740E86',
           borderRadius: 10,
-          paddingVertical: 10,
+          paddingVertical: 14,
           paddingHorizontal: 20,
           flexDirection: 'row',
           justifyContent: 'space-between',
           alignItems: 'center',
           position: 'relative',
+          marginBottom: -8,
         }}>
         <TouchableOpacity
           style={{alignItems: 'center', width: '20%'}}
@@ -577,7 +595,7 @@ export default function Home({navigation}) {
             backgroundColor: '#ffffff',
             position: 'absolute',
             borderRadius: 50,
-            bottom: -30,
+            bottom: -25,
             left: '40%',
             padding: 10,
             alignItems: 'center',
@@ -596,8 +614,8 @@ export default function Home({navigation}) {
             navigation.navigate('Wallet');
           }}>
           <Image
-            source={require('../assets/walletIcon.png')}
-            style={{width: 40, height: 40}}
+            source={require('../assets/receiptIcon.png')}
+            style={{width: 40, height: 43}}
           />
           <Text style={{color: '#ffffff', fontSize: 10}}>Receipts</Text>
         </TouchableOpacity>
