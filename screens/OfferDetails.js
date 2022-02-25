@@ -22,7 +22,7 @@ export default function OfferDetails({navigation}) {
         <View
           style={{
             paddingHorizontal: 20,
-            paddingVertical: 10,
+            marginVertical: 20,
             flexDirection: 'row',
             justifyContent: 'space-between',
             alignItems: 'center',

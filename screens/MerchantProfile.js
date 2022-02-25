@@ -59,7 +59,7 @@ export default function MerchantProfile({navigation}) {
         <View
           style={{
             marginHorizontal: 20,
-            marginVertical: 10,
+            marginVertical: 20,
             flexDirection: 'row',
             justifyContent: 'space-between',
             alignItems: 'center',
@@ -91,8 +91,14 @@ export default function MerchantProfile({navigation}) {
               alignSelf: 'center',
               justifyContent: 'center',
               alignItems: 'center',
+              margiTop: 14,
             }}>
-            <Image source={require('../assets/logo.png')} />
+            <View style={{width: 150, height: 150}}>
+              <Image
+                style={{width: '100%', height: '100%'}}
+                source={require('../assets/logo.png')}
+              />
+            </View>
             <Text
               style={{
                 color: '#283244',

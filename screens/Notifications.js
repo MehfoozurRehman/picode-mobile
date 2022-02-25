@@ -14,7 +14,7 @@ function NotificationCard() {
     <TouchableOpacity
       style={{
         paddingHorizontal: 20,
-        paddingVertical: 15,
+        marginVertical: 20,
         borderRadius: 8,
         marginBottom: 10,
         backgroundColor: '#ffffff',

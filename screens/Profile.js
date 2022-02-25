@@ -12,7 +12,7 @@ export default function Profile({navigation}) {
       <View
         style={{
           marginHorizontal: 20,
-          marginVertical: 10,
+          marginVertical: 20,
           flexDirection: 'row',
           justifyContent: 'space-between',
           alignItems: 'center',
