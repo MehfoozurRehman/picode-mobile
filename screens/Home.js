@@ -13,7 +13,85 @@ import MarqueeText from 'react-native-marquee';
 import Svg, {ClipPath, Defs, G, Path} from 'react-native-svg';
 import Swiper from 'react-native-swiper';
 import {Bell, Clipboard, Grid, Settings, User, X} from 'react-native-feather';
-import Animated, {SlideInLeft, SlideOutLeft} from 'react-native-reanimated';
+import Animated, {
+  FadeIn,
+  FadeOut,
+  SlideInLeft,
+  SlideOutLeft,
+} from 'react-native-reanimated';
+import InputVerficationPopup from '../components/InputVerficationPopup';
+
+function ShopPopup({onClose, navigation, setIsShopPopup}) {
+  return (
+    <Animated.View
+      entering={FadeIn}
+      exiting={FadeOut}
+      style={{
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        backgroundColor: '#ffffffa9',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 20,
+      }}>
+      <ImageBackground
+        style={{
+          width: '100%',
+          elevation: 5,
+          borderRadius: 10,
+          overflow: 'hidden',
+        }}
+        source={require('../assets/shopPopup.png')}>
+        <ScrollView>
+          <View style={{padding: 20, position: 'relative'}}>
+            <TouchableOpacity
+              onPress={onClose}
+              style={{position: 'absolute', right: 20, top: 20, zIndex: 100}}>
+              <X size={20} color="#ffffff" />
+            </TouchableOpacity>
+            {/* <Text
+              style={{
+                fontSize: 20,
+                fontWeight: 'bold',
+                color: '#ffffff',
+                textTransform: 'uppercase',
+                marginBottom: 10,
+              }}>
+              SHOP name
+            </Text> */}
+            <Text
+              style={{
+                color: '#ffffff',
+                fontSize: 16,
+                marginTop: 40,
+                alignSelf: 'center',
+                width: '50%',
+                textAlign: 'center',
+              }}>
+              Enter Last 4 digits of your Debit Card
+            </Text>
+            <InputVerficationPopup />
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('Wallet');
+                setIsShopPopup(false);
+              }}
+              style={{
+                backgroundColor: '#ffffff',
+                paddingVertical: 14,
+                borderRadius: 50,
+                alignItems: 'center',
+                marginTop: 20,
+              }}>
+              <Text style={{color: '#0E0E17'}}>Confirm</Text>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
+      </ImageBackground>
+    </Animated.View>
+  );
+}
 
 function SidePanel({onClose, navigation}) {
   return (
@@ -274,6 +352,7 @@ function StoreCard({onPress}) {
 
 export default function Home({navigation}) {
   const [isSidePanel, setIsSidePanel] = useState(false);
+  const [isShopPopup, setIsShopPopup] = useState(false);
 
   return (
     <SafeAreaView
@@ -611,7 +690,8 @@ export default function Home({navigation}) {
         <TouchableOpacity
           style={{alignItems: 'center', width: '20%'}}
           onPress={() => {
-            navigation.navigate('Wallet');
+            setIsShopPopup(true);
+            // navigation.navigate('Wallet');
           }}>
           <Image
             source={require('../assets/receiptIcon.png')}
@@ -625,6 +705,15 @@ export default function Home({navigation}) {
           navigation={navigation}
           onClose={() => {
             setIsSidePanel(false);
+          }}
+        />
+      ) : null}
+      {isShopPopup ? (
+        <ShopPopup
+          setIsShopPopup={setIsShopPopup}
+          navigation={navigation}
+          onClose={() => {
+            setIsShopPopup(false);
           }}
         />
       ) : null}
