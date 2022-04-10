@@ -77,7 +77,7 @@ export default function EditProfile({navigation}) {
           }}
           style={{
             marginBottom: 30,
-            backgroundColor: '#FE516C',
+            backgroundColor: '#561488',
             padding: 13,
             width: '100%',
             borderRadius: 50,

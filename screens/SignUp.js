@@ -49,7 +49,7 @@ function SignUp1({navigation}) {
               navigation.navigate('SignUp2');
             }}
             style={{
-              backgroundColor: '#FE516C',
+              backgroundColor: '#561488',
               padding: 13,
               width: '100%',
               borderRadius: 50,
@@ -79,8 +79,8 @@ function SignUp1({navigation}) {
               style={{marginLeft: 5}}>
               <Text
                 style={{
-                  color: '#FE516C',
-                  textDecorationColor: '#FE516C',
+                  color: '#561488',
+                  textDecorationColor: '#561488',
                   textDecorationLine: 'underline',
                 }}>
                 Login
@@ -133,8 +133,8 @@ function SignUp2({navigation}) {
               style={{marginRight: 5}}>
               <Text
                 style={{
-                  color: '#FE516C',
-                  textDecorationColor: '#FE516C',
+                  color: '#561488',
+                  textDecorationColor: '#561488',
                   textDecorationLine: 'underline',
                 }}>
                 Resend OTP
@@ -152,7 +152,7 @@ function SignUp2({navigation}) {
               navigation.navigate('SignUp3');
             }}
             style={{
-              backgroundColor: '#FE516C',
+              backgroundColor: '#561488',
               padding: 13,
               width: '100%',
               borderRadius: 50,
@@ -213,7 +213,7 @@ function SignUp3({navigation}) {
               }, 1000);
             }}
             style={{
-              backgroundColor: '#FE516C',
+              backgroundColor: '#561488',
               padding: 13,
               width: '100%',
               borderRadius: 50,

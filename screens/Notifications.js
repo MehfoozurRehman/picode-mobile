@@ -41,7 +41,7 @@ function NotificationCard() {
           fontSize: 13,
           fontFamily: '500',
           textAlign: 'right',
-          color: '#FE516C',
+          color: '#561488',
         }}>
         March 3 2022
       </Text>

@@ -81,9 +81,9 @@ function CategoryItem({selected, setSelected, id}) {
       }}>
       <Text
         style={{
-          color: selected === id ? '#FE516C' : '#BFBFBF',
+          color: selected === id ? '#561488' : '#BFBFBF',
           textTransform: 'uppercase',
-          textDecorationColor: '#FE516C',
+          textDecorationColor: '#561488',
           textDecorationLine: selected === id ? 'underline' : 'none',
           fontWeight: 'bold',
         }}>
@@ -227,7 +227,7 @@ export default function Merchants({navigation}) {
             justifyContent: 'space-between',
           }}>
           <Text style={{color: '#888888'}}>Highest to Lowest</Text>
-          <ChevronDown stroke="#FE516C" fill="#fff" width={20} height={20} />
+          <ChevronDown stroke="#561488" fill="#fff" width={20} height={20} />
         </TouchableOpacity>
         <ScrollView horizontal={true}>
           {categoryList.map(item => (

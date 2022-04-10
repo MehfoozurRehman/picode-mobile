@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   focusCell: {
-    borderBottomColor: '#FE516C',
+    borderBottomColor: '#561488',
     borderBottomWidth: 2,
   },
 });

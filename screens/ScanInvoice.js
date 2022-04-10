@@ -70,7 +70,7 @@ export default function ScanInvoice({navigation}) {
           style={{
             width: 80,
             height: 80,
-            backgroundColor: '#FE516C',
+            backgroundColor: '#561488',
             borderRadius: 80,
             display: 'flex',
             justifyContent: 'center',

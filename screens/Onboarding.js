@@ -41,7 +41,7 @@ function Onboarding1({navigation}) {
             navigation.navigate('Onboarding2');
           }}
           style={{
-            backgroundColor: '#FE516C',
+            backgroundColor: '#561488',
             marginLeft: 'auto',
             padding: 12,
             width: 120,
@@ -107,7 +107,7 @@ function Onboarding2({navigation}) {
             navigation.navigate('Login');
           }}
           style={{
-            backgroundColor: '#FE516C',
+            backgroundColor: '#ffffff',
             marginLeft: 'auto',
             padding: 12,
             width: 120,
@@ -116,7 +116,7 @@ function Onboarding2({navigation}) {
             alignItems: 'center',
             marginTop: 20,
           }}>
-          <Text style={{color: '#ffffff'}}>Next</Text>
+          <Text style={{color: '#561488'}}>Next</Text>
         </TouchableOpacity>
       </View>
       <TouchableOpacity

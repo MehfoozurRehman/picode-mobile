@@ -526,7 +526,7 @@ export default function Wallet({navigation}) {
             width: 90,
           }}>
           <Text style={{color: '#888888'}}>Latest</Text>
-          <ChevronDown stroke="#FE516C" fill="#fff" width={20} height={20} />
+          <ChevronDown stroke="#561488" fill="#fff" width={20} height={20} />
         </TouchableOpacity>
       </View>
       <ScrollView style={{width: '100%', paddingHorizontal: 20}}>

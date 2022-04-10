@@ -141,7 +141,7 @@ function SidePanel({onClose, navigation}) {
                 marginBottom: 10,
               }}>
               <Text
-                style={{color: '#FE516C', fontWeight: 'bold', width: '50%'}}>
+                style={{color: '#561488', fontWeight: 'bold', width: '50%'}}>
                 242424
               </Text>
               <Text
@@ -184,7 +184,7 @@ function SidePanel({onClose, navigation}) {
         </View>
         <TouchableOpacity
           style={{
-            backgroundColor: '#FE516C',
+            backgroundColor: '#561488',
             flexDirection: 'row',
             alignItems: 'center',
             paddingVertical: 5,
@@ -567,7 +567,7 @@ export default function Home({navigation}) {
             }}>
             <Text
               style={{
-                color: '#FE516C',
+                color: '#561488',
                 fontSize: 12,
                 fontWeight: 'bold',
               }}>

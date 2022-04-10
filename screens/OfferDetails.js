@@ -26,7 +26,7 @@ export default function OfferDetails({navigation}) {
             flexDirection: 'row',
             justifyContent: 'space-between',
             alignItems: 'center',
-            backgroundColor: '#FE516C',
+            backgroundColor: '#561488',
           }}>
           <TouchableOpacity
             onPress={() => {

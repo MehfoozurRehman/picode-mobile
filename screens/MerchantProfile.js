@@ -20,7 +20,7 @@ function BranchesCard() {
         flexDirection: 'row',
         backgroundColor: '#ffffff',
         borderWidth: 1,
-        borderColor: '#FE516C',
+        borderColor: '#561488',
         padding: 14,
         borderRadius: 10,
         marginVertical: 6,
@@ -40,7 +40,7 @@ function BranchesCard() {
           data-name="Icon material-location-on"
           d="M15.572 3A8.066 8.066 0 007.5 11.072c0 6.054 8.072 14.99 8.072 14.99s8.072-8.937 8.072-14.99A8.066 8.066 0 0015.572 3zm0 10.954a2.883 2.883 0 112.883-2.883 2.884 2.884 0 01-2.883 2.883z"
           transform="translate(-7.5 -3)"
-          fill="#fe516c"
+          fill="#561488"
         />
       </Svg>
     </TouchableOpacity>
@@ -209,7 +209,7 @@ export default function MerchantProfile({navigation}) {
                 width: '49%',
                 padding: 12,
                 borderRadius: 10,
-                backgroundColor: '#FE516C',
+                backgroundColor: '#561488',
                 display: 'flex',
                 flexDirection: 'row',
                 justifyContent: 'space-between',

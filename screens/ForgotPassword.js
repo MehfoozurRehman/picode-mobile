@@ -59,7 +59,7 @@ export default function ForgotPassword({navigation}) {
               navigation.navigate('Home');
             }}
             style={{
-              backgroundColor: '#FE516C',
+              backgroundColor: '#561488',
               padding: 13,
               width: '100%',
               borderRadius: 50,

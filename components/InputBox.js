@@ -30,11 +30,11 @@ export default function InputBox({
           top: -15,
         }}>
         {error ? (
-          <Text style={{fontSize: 12, color: '#FE516C', fontWeight: 'bold'}}>
+          <Text style={{fontSize: 12, color: '#561488', fontWeight: 'bold'}}>
             {placeholder}
           </Text>
         ) : focus ? (
-          <Text style={{fontSize: 12, color: '#FE516C', fontWeight: 'bold'}}>
+          <Text style={{fontSize: 12, color: '#561488', fontWeight: 'bold'}}>
             {placeholder}
           </Text>
         ) : null}

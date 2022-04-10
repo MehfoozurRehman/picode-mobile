@@ -64,7 +64,7 @@ export default function Login({navigation}) {
               navigation.navigate('Home');
             }}
             style={{
-              backgroundColor: '#FE516C',
+              backgroundColor: '#561488',
               padding: 13,
               width: '100%',
               borderRadius: 50,
@@ -94,8 +94,8 @@ export default function Login({navigation}) {
               style={{marginLeft: 5}}>
               <Text
                 style={{
-                  color: '#FE516C',
-                  textDecorationColor: '#FE516C',
+                  color: '#561488',
+                  textDecorationColor: '#561488',
                   textDecorationLine: 'underline',
                 }}>
                 Sign Up
